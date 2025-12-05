@@ -34,9 +34,28 @@ The Wiener-Khinchin theorem states that the power spectral density of a wide sen
 •	Verify the generated waveform using Tabulation and Model Waveform
 
 ## PROGRAM
+clc
+clear all;
+t=0:0.01:2*3.14;
+x=sin(2*t);
+subplot(3,2,1);
+plot(x);
+au=xcorr(x,x);
 
+subplot(3,2,2);
+plot(au);
+v=fft(au);
+subplot(3,2,3);
+plot(abs(v));
+fw=fft(x);
+subplot(3,2,4);
+plot(fw);
+fw2=(abs(fw)).^2;
+subplot(3,2,5);
+plot(fw2);
 ## OUTPUT
+<img width="439" height="331" alt="image" src="https://github.com/user-attachments/assets/53e0c221-6d42-40f9-b8fc-b2794a8a77fa" />
 
 ## RESULT`
-
+Thus, the autocorrelation and PSD are executed in scilab and output is verified.
 
